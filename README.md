@@ -129,4 +129,4 @@ Veri eşlemesi ve içe aktarma notları:
 
 PTT'nin sunduğu sertifika zinciri bazı Ubuntu/Python kurulumlarında `unable to get local issuer certificate` hatasına yol açtığı için bu scriptte SSL sertifika doğrulaması geçici olarak kapatılmıştır.
 
-Bu kullanım yalnızca tek seferlik veri indirme işlemi içindir. `verify=False` yaklaşımı TabipSitesi'nin üretim backend'ine taşınmamalıdır. Üretimde veri bir kez doğrulanıp veritabanına alınmalı ve uygulama PTT'ye her kullanıcı isteğinde doğrudan bağlanmamalıdır.
+Bu kullanım yalnızca tek seferlik veri indirme işlemi içindir. `verify=False` yaklaşımı üretim backend'ine taşınmamalıdır. Üretimde veri bir kez doğrulanıp veritabanına alınmalı ve uygulama PTT'ye her kullanıcı isteğinde doğrudan bağlanmamalıdır.

@@ -1,0 +1,10 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.json
+*.json.tmp
+.env
+.idea/
+.vscode/
+.DS_Store

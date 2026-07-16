@@ -1,6 +1,5 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://tabipsitesi.com/schemas/ptt-il-ilce-mahalle.json",
   "title": "PTT İl İlçe Mahalle Çıktısı",
   "type": "array",
   "items": {

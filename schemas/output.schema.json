@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tabipsitesi.com/schemas/ptt-il-ilce-mahalle.json",
+  "title": "PTT İl İlçe Mahalle Çıktısı",
+  "type": "array",
+  "items": {
+    "$ref": "#/$defs/province"
+  },
+  "$defs": {
+    "province": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["il_kodu", "il_adi", "ilceler"],
+      "properties": {
+        "il_kodu": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 81
+        },
+        "il_adi": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ilceler": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/district"
+          }
+        },
+        "hata": {
+          "type": "string"
+        }
+      }
+    },
+    "district": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ilce_kodu", "ilce_adi", "mahalleler"],
+      "properties": {
+        "ilce_kodu": {
+          "type": ["string", "integer"]
+        },
+        "ilce_adi": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mahalleler": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/neighborhood"
+          }
+        },
+        "hata": {
+          "type": "string"
+        }
+      }
+    },
+    "neighborhood": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mahalle_adi"],
+      "properties": {
+        "mahalle_adi": {
+          "type": "string",
+          "minLength": 1
+        },
+        "posta_kodu": {
+          "type": "string",
+          "pattern": "^[0-9]{5}$"
+        },
+        "ptt_ham_verisi": {
+          "type": "object"
+        }
+      }
+    }
+  }
+}

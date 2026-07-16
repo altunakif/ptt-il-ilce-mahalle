@@ -67,15 +67,15 @@ Veriler toplu olarak alınmalı ve tek transaction içinde `upsert` edilmelidir:
 - Posta kodu tam olarak beş rakamdan oluşmalıdır.
 - Aynı ilçe içinde aynı ad ve posta koduna sahip kayıt tekrar eklenmemelidir.
 
-## TabipSitesi entegrasyonu
+## Uygulama entegrasyonu
 
-Doktorun çalışma konumu mahalle seviyesinde tutulacaksa doktor konum tablosunda `neighborhood_id` kullanılabilir. Yalnızca il/ilçe seçimi yeterliyse `district_id` zorunlu, `neighborhood_id` isteğe bağlı tutulmalıdır.
+Bir kullanıcının veya kuruluşun konumu mahalle seviyesinde tutulacaksa konum tablosunda `neighborhood_id` kullanılabilir. Yalnızca il/ilçe seçimi yeterliyse `district_id` zorunlu, `neighborhood_id` isteğe bağlı tutulmalıdır.
 
 Örnek ilişki:
 
 ```text
-DoctorLocation
-- doctor_id
+Location
+- owner_id
 - district_id
 - neighborhood_id (nullable)
 - address_line
@@ -83,4 +83,4 @@ DoctorLocation
 - longitude
 ```
 
-PTT'ye her kullanıcı formu açılışında istek göndermek yerine veriler PostgreSQL'e alınmalı; kullanıcı arayüzü TabipSitesi API'sinden beslenmelidir.
+PTT'ye her kullanıcı formu açılışında istek göndermek yerine veriler PostgreSQL'e alınmalı ve kullanıcı arayüzü uygulamanın kendi API'sinden beslenmelidir.
